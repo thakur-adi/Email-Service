@@ -19,7 +19,7 @@ public class SendEmailService {
     @Autowired
     ObjectMapper objectMapper;
 
-    @KafkaListener(topics = "notification-signup",groupId = "email-service-group")
+    @KafkaListener(topics = "user-signup",groupId = "email-service-group")
     public void sendSignupEmail(String message){
 
         System.out.println("Received message from Kafka topic notification-signup: " + message);
@@ -35,7 +35,7 @@ public class SendEmailService {
         sendEmail(fromEmail,password,emailResponseDto);
 
     }
-    @KafkaListener(topics = {"notification-login","notification-update-details","notification-reset-password"},groupId = "email-service-group")
+    @KafkaListener(topics = {"user-login","user-update-details","user-reset-password"},groupId = "email-service-group")
     public void sendSecurityEmail(String message){
 
         System.out.println("Received message from Kafka topic notification-login or notification-update-details or notification-reset-password:" + message);
