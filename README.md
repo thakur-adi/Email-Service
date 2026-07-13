@@ -124,9 +124,8 @@ src/
 ## Roadmap
 
 - [ ] Content-rich emails (OTPs, reset links, account details)
-- [ ] Dead letter queue (DLQ) for failed email delivery
-- [ ] Retry logic with exponential backoff
 - [ ] Email delivery status tracking
+- [ ] Retry logic in case of delivery failure
 
 ---
 
