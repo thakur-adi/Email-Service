@@ -39,7 +39,7 @@ User Auth Service
 ## Design Decisions
 
 - **Why topic-per-action over a single topic?**<br><br>
-A single `user-notifications` topic would work today, but any downstream service (e.g. an analytics service etc) that only cares about profile updates would be forced to consume all events and filter them out. With one topic per action, services subscribe to exactly what they need — no filtering, no wasted consumption, and no coupling between unrelated event types.<br><br>
+A single `user-notifications` topic would work today, but any downstream service (e.g. an analytics service, etc) that only cares about profile updates would be forced to consume all events and filter them out. With one topic per action, services subscribe to exactly what they need — no filtering, no wasted consumption, and no coupling between unrelated event types. So we have various topics like user-signup, user-login, etc.<br><br>
 
 - **Why does the User Auth Service own the email payload?**<br><br>
  Each action (signup, login, reset, profile update) has a different email body. Since the User Auth Service has full context about what happened and to whom, it constructs the complete payload — recipient, subject, and body — before publishing. The Email Service stays intentionally thin, just consuming and dispatching. This means adding a new notification type requires zero changes to the Email Service.
@@ -82,7 +82,7 @@ A single `user-notifications` topic would work today, but any downstream service
 | Build Tool | Maven |
 
 ---
-
+<!--
 ## Getting Started
 
 ```bash
@@ -102,7 +102,7 @@ export SECURITY_PASSWORD=your_smtp_password
 > Ensure a Kafka broker is running and the topics exist before starting the service. Topics can be auto-created or pre-provisioned depending on your Kafka config.
 
 ---
-
+-->
 ## Project Structure
 
 ```
@@ -123,9 +123,9 @@ src/
 
 ## Roadmap
 
-- [ ] Content-rich emails (OTPs, reset links, account details)
-- [ ] Email delivery status tracking
-- [ ] Retry logic in case of delivery failure
+-  Content-rich emails (OTPs, reset links, account details)
+-  Email delivery status tracking
+-  Retry logic in case of delivery failure
 
 ---
 
