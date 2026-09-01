@@ -61,12 +61,13 @@ A single `user-notifications` topic would work today, but any downstream service
 
 ## Environment Variables
 
-| Variable | Description |
-|---|---|
-| `SIGNUP_EMAIL` | Sender address for signup emails |
-| `SIGNUP_PASSWORD` | SMTP password for signup sender |
-| `SECURITY_EMAIL` | Sender address for login, reset, and update emails |
-| `SECURITY_PASSWORD` | SMTP password for security sender |
+| Variable            | Description                                        |
+|---------------------|----------------------------------------------------|
+| `SIGNUP_EMAIL`      | Sender address for signup emails                   |
+| `SIGNUP_PASSWORD`   | SMTP password for signup sender                    |
+| `SECURITY_EMAIL`    | Sender address for login, reset, and update emails |
+| `SECURITY_PASSWORD` | SMTP password for security sender                  |
+| `EUREKA_SERVER_URL` | Url address for EUREKA Server                      |
 
 
 
