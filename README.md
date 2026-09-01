@@ -131,6 +131,6 @@ src/
 
 ## Related Services
 
-- [User Auth Service](https://github.com/your-username/user-auth-service) — publishes events to the Kafka topics this service consumes
+- [User Auth Service](https://github.com/thakur-adi/user-auth-service) — publishes events to the Kafka topics this service consumes
 
 ---
